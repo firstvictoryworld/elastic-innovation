@@ -1,0 +1,242 @@
+@font-face {
+  font-family: 'Roboto';
+  font-display: swap;
+  font-weight: 900;
+  src: url('/assets/fonts/Roboto-Black.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-display: swap;
+  font-weight: 900;
+  font-style: italic;
+  src: url('/assets/fonts/Roboto-BlackItalic.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-display: swap;
+  font-weight: 700;
+  src: url('/assets/fonts/Roboto-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-display: swap;
+  font-weight: 700;
+  font-style: italic;
+  src: url('/assets/fonts/Roboto-BoldItalic.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-display: swap;
+  font-weight: 200;
+  src: url('/assets/fonts/Roboto-Thin.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-display: swap;
+  font-weight: 200;
+  font-style: italic;
+  src: url('/assets/fonts/Roboto-ThinItalic.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-display: swap;
+  font-style: italic;
+  src: url('/assets/fonts/Roboto-Italic.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-display: swap;
+  font-weight: 300;
+  src: url('/assets/fonts/Roboto-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-display: swap;
+  font-weight: 300;
+  font-style: italic;
+  src: url('/assets/fonts/Roboto-LightItalic.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-display: swap;
+  font-weight: 400;
+  font-style: italic;
+  src: url('/assets/fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-display: swap;
+  font-weight: 600;
+  src: url('/assets/fonts/Roboto-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-display: swap;
+  font-weight: 600;
+  font-style: italic;
+  src: url('/assets/fonts/Roboto-MediumItalic.ttf');
+}
+
+.footer-title:after {
+  background-image: linear-gradient(to top, #21a294, #7670b3);
+  position: absolute;
+  content: '';
+  width: 25px;
+  height: 90px;
+  bottom: 32px;
+  right: -64px;
+  display: block;
+}
+
+@media screen and (max-width: 1024px) {
+  .footer-title:after {
+    bottom: 12px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .footer-title:after {
+    bottom: 4px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .footer-title:after {
+    display: none;
+  }
+}
+
+.client-cards .carousel {
+  display: inline;
+}
+
+.client-cards .control-dots {
+  bottom: -92px !important;
+}
+
+.client-cards .control-dots .dot {
+  width: 23px !important;
+  height: 23px !important;
+  background-color: white !important;
+  box-shadow: unset !important;
+}
+
+.client-cards .slide {
+  margin-bottom: 24px !important;
+  margin-top: 24px !important;
+}
+
+.client-cards .control-dots .dot.selected {
+  background-image: linear-gradient(to bottom, #7872b4, #24a497);
+}
+
+.project-cards .control-dots .dot {
+  width: 23px !important;
+  height: 23px !important;
+  background-color: #d9d9d9 !important;
+  box-shadow: unset !important;
+}
+
+.project-cards .control-dots .dot.selected {
+  background-image: linear-gradient(to bottom, #7872b4, #24a497);
+}
+
+.project-cards .carousel {
+  display: inline;
+}
+
+.project-cards .control-dots {
+  bottom: -92px !important;
+}
+
+.client-card:after {
+  position: absolute;
+  right: 24px;
+  bottom: -100px;
+  content: '”';
+  color: black;
+  font-weight: 900;
+  font-size: 128px;
+  line-height: 138px;
+}
+
+.client-card:before {
+  position: absolute;
+  left: 24px;
+  top: -100px;
+  transform: rotate(180deg);
+  content: '”';
+  color: black;
+  font-weight: 900;
+  font-size: 128px;
+  line-height: 138px;
+}
+
+.custom-container {
+  padding: 0 2rem;
+}
+@media screen and (min-width: 1730px) {
+  .custom-container {
+    max-width: 1693px;
+  }
+}
+
+@media screen and (min-width: 1536px) and (max-width: 1729px) {
+  .custom-container {
+    max-width: 1520px;
+  }
+}
+
+@media screen and (max-width: 1536px) {
+  .custom-container {
+    max-width: 1250px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .custom-container {
+    max-width: 1024px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .custom-container {
+    max-width: 768px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .custom-container {
+    max-width: 576px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .custom-container {
+    max-width: 450px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .custom-container {
+    max-width: 380px;
+    padding: 0px 1rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .custom-container {
+    max-width: 360px;
+  }
+}
