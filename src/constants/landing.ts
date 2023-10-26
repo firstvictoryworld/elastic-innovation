@@ -1,7 +1,7 @@
 export const softwareDatum = [
   {
     type: 'Developers',
-    data: '20~50',
+    data: '30+',
     border: true,
   },
   {
@@ -99,42 +99,49 @@ export const testimonials = [
 
 export const projects = [
   {
-    id: '1',
+    id: '111',
     image: '/assets/images/project-1.jpg',
     name: 'Rosalyn',
     description: 'An AI-based remote assessment and proctoring solution',
   },
   {
-    id: '2',
+    id: '222',
     image: '/assets/images/project-2.jpg',
     name: 'Boston Solar',
     description: 'A web-based solar modeling and proposal tool',
   },
   {
-    id: '3',
+    id: '333',
     image: '/assets/images/project-3.jpg',
     name: 'Facta',
     description:
       'A cloud-based solution for controlling, analyzing, and sharing financial data',
   },
   {
-    id: '4',
+    id: '444',
     image: '/assets/images/project-4.webp',
     name: 'Trust Stamp',
     description:
       'TrustStamp has a mission to make usernames and passwords obsolete by providing a trustworthy identity.',
   },
   {
-    id: '5',
+    id: '555',
     image: '/assets/images/project-5.webp',
     name: 'ActionFunder',
     description:
       "It's a platform which connects community groups and businesses with the aim of driving positive change.",
   },
   {
-    id: '6',
+    id: '666',
     image: '/assets/images/project-6.png',
     name: 'IPEX',
     description: 'Innovative Payment Solutions in Construction',
   },
 ];
+
+export const initialMobileFramerConfig = { opacity: 0, scale: 0 };
+
+export const initialRightSlideAndFadeConfig = { opacity: 0, scale: 0, x: -300 };
+export const initialLeftSlideAndFadeConfig = { opacity: 0, scale: 0, x: 300 };
+
+export const whileInViewSlideConfig = { opacity: 1, scale: 1, x: 0 };

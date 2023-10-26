@@ -58,8 +58,8 @@ const Footer = () => {
             <div className="flex flex-col items-center md:block">
               <h3 className="text-3.5xl uppercase leading-37.5px text-white">address</h3>
               <p className="mt-4 text-center leading-18.75px text-white md:text-left">
-              Babatan Mukti blok i-12A, Desa/Kelurahan Babatan, Kec. Wiyung, Kota
-              Surabaya, Provinsi Jawa Timur, 60227, Indonesia
+                Babatan Mukti blok i-12A, Desa/Kelurahan Babatan, Kec. Wiyung, Kota
+                Surabaya, Provinsi Jawa Timur, 60227, Indonesia
               </p>
             </div>
             <div className="flex justify-center space-y-4 md:justify-between lg:space-y-0">
@@ -104,7 +104,7 @@ const Footer = () => {
           </div>
         </div>
         <p className="mt-10 text-center font-bold leading-18.75px text-[#8E8E8E]">
-        PT ELASTIC INNOVATION SOLUTIONS  © 2023 All Right Reserved
+          PT ELASTIC INNOVATION SOLUTIONS © 2023 All Right Reserved
         </p>
       </div>
     </div>

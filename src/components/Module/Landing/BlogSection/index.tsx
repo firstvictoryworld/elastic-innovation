@@ -1,7 +1,14 @@
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
+import { isMobile } from 'react-device-detect';
 
-import { blogItems } from '../../../../constants';
+import {
+  blogItems,
+  initialLeftSlideAndFadeConfig,
+  initialMobileFramerConfig,
+  initialRightSlideAndFadeConfig,
+  whileInViewSlideConfig,
+} from '../../../../constants';
 import TextGradient from '../../../Common/TextGradient';
 import BlogPostModal from './BlogPostModal';
 
@@ -12,8 +19,8 @@ const BlogSection = () => {
     <div className="relative z-20 py-28">
       <div className="custom-container mx-auto">
         <motion.div
-          initial={{ opacity: 0, scale: 0, x: 500 }}
-          whileInView={{ opacity: 1, scale: 1, x: 0 }}
+          initial={isMobile ? initialMobileFramerConfig : initialLeftSlideAndFadeConfig}
+          whileInView={whileInViewSlideConfig}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
@@ -31,17 +38,23 @@ const BlogSection = () => {
           </TextGradient>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, scale: 0, x: -500 }}
-          whileInView={{ opacity: 1, scale: 1, x: 0 }}
+          initial={isMobile ? initialMobileFramerConfig : initialRightSlideAndFadeConfig}
+          whileInView={whileInViewSlideConfig}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="mt-10 grid grid-cols-1 gap-x-12 gap-y-12 md:grid-cols-2 lg:grid-cols-2 lg:gap-y-0 xl:grid-cols-4"
         >
-          {blogItems.map((blog) => (
-            <button
-              key={blog.id}
+          {blogItems.map((blog, index) => (
+            <motion.button
+              key={`${blog.id}-${index}`}
               className="group cursor-pointer overflow-hidden rounded-10px bg-gray-special bg-opacity-25"
               onClick={() => setSelectedBlog(blog.id)}
+              initial={
+                isMobile ? initialMobileFramerConfig : initialRightSlideAndFadeConfig
+              }
+              whileInView={whileInViewSlideConfig}
+              transition={{ duration: 0.3, delay: 0.3 * (index + 1) }}
+              viewport={{ once: true }}
             >
               <div className="w-full overflow-hidden ">
                 <img
@@ -59,7 +72,7 @@ const BlogSection = () => {
                   <span className="text-sm text-[#7E7E7E]">{blog.date}</span>
                 </div>
               </div>
-            </button>
+            </motion.button>
           ))}
         </motion.div>
         {selectedBlog && (

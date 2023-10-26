@@ -1,8 +1,15 @@
 import { motion } from 'framer-motion';
 import React from 'react';
+import { isMobile } from 'react-device-detect';
 import { Carousel } from 'react-responsive-carousel';
 
-import { projects } from '../../../../constants';
+import {
+  initialLeftSlideAndFadeConfig,
+  initialMobileFramerConfig,
+  initialRightSlideAndFadeConfig,
+  projects,
+  whileInViewSlideConfig,
+} from '../../../../constants';
 
 const CustomPrevArrow = (onClickHandler: () => void, hasPrev: boolean, label: string) => (
   <button
@@ -50,21 +57,15 @@ const CustomNextArrow = (onClickHandler: () => void, hasNext: boolean, label: st
 const ProjectsSection = () => {
   return (
     <div className="relative z-20 py-0 pt-20 md:py-36">
-      <motion.div
-        initial={{ opacity: 0, scale: 0, x: -500 }}
-        whileInView={{ opacity: 1, scale: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="custom-container mx-auto mb-20 flex items-center justify-end space-x-4"
-      >
+      <motion.div className="custom-container mx-auto mb-20 flex items-center justify-end space-x-4">
         <span className="text-3.5xl font-semibold leading-34.52px text-green-special-2">
           Our Projects
         </span>
         <div className="h-[3px] w-24 bg-green-special-1" />
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, scale: 0 }}
-        whileInView={{ opacity: 1, scale: 1 }}
+        initial={isMobile ? initialMobileFramerConfig : initialLeftSlideAndFadeConfig}
+        whileInView={whileInViewSlideConfig}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
         className="project-cards mb-16 md:mb-20"
@@ -85,10 +86,16 @@ const ProjectsSection = () => {
             </div>
           ))}
         </Carousel> */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((item: any) => (
-            <div
-              key={item.id}
+        <motion.div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {projects?.map((item: any, index: number) => (
+            <motion.div
+              initial={
+                isMobile ? initialMobileFramerConfig : initialRightSlideAndFadeConfig
+              }
+              whileInView={whileInViewSlideConfig}
+              transition={{ duration: 0.3, delay: 0.3 * (index + 1) }}
+              viewport={{ once: true }}
+              key={`${item.id}`}
               className="group relative h-[400px] w-full overflow-hidden rounded-2xl"
             >
               <img src={item.image} className="z-5 h-full w-full object-cover" alt="" />
@@ -100,9 +107,9 @@ const ProjectsSection = () => {
                   {item.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </motion.div>
     </div>
   );

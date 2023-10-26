@@ -1,8 +1,15 @@
 import classNames from 'classnames';
 import { motion } from 'framer-motion';
 import React from 'react';
+import { isMobile } from 'react-device-detect';
 import { useSelector } from 'react-redux';
 
+import {
+  initialLeftSlideAndFadeConfig,
+  initialMobileFramerConfig,
+  initialRightSlideAndFadeConfig,
+  whileInViewSlideConfig,
+} from '../../../../constants';
 import { RootState } from '../../../../redux/reducers';
 import TextGradient from '../../../Common/TextGradient';
 
@@ -11,7 +18,13 @@ const AboutSection = () => {
 
   return (
     <div className="custom-container relative z-20 ml-auto mr-auto flex flex-col items-center gap-0 space-x-4 space-y-8 lg:flex-row xl:gap-10">
-      <motion.div className="w-full lg:w-1/2">
+      <motion.div
+        initial={isMobile ? initialMobileFramerConfig : initialRightSlideAndFadeConfig}
+        whileInView={whileInViewSlideConfig}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="w-full lg:w-1/2"
+      >
         <img
           src="/assets/images/about-company.jpg"
           alt="people-group"
@@ -19,8 +32,8 @@ const AboutSection = () => {
         />
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, scale: 0, x: -500 }}
-        whileInView={{ opacity: 1, scale: 1, x: 0 }}
+        initial={isMobile ? initialMobileFramerConfig : initialLeftSlideAndFadeConfig}
+        whileInView={whileInViewSlideConfig}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
         className="w-full lg:w-1/2"
