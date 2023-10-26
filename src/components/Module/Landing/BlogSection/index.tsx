@@ -37,13 +37,7 @@ const BlogSection = () => {
             Case Studies
           </TextGradient>
         </motion.div>
-        <motion.div
-          initial={isMobile ? initialMobileFramerConfig : initialRightSlideAndFadeConfig}
-          whileInView={whileInViewSlideConfig}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-10 grid grid-cols-1 gap-x-12 gap-y-12 md:grid-cols-2 lg:grid-cols-2 lg:gap-y-0 xl:grid-cols-4"
-        >
+        <motion.div className="mt-10 grid grid-cols-1 gap-x-12 gap-y-12 md:grid-cols-2 lg:grid-cols-2 lg:gap-y-0 xl:grid-cols-4">
           {blogItems.map((blog, index) => (
             <motion.button
               key={`${blog.id}-${index}`}

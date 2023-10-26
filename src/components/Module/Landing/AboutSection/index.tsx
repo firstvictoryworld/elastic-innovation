@@ -17,7 +17,7 @@ const AboutSection = () => {
   const isDarkMode = useSelector((state: RootState) => state.commonReducer.isDarkMode);
 
   return (
-    <div className="custom-container relative z-20 ml-auto mr-auto flex flex-col items-center gap-0 space-x-4 space-y-8 lg:flex-row xl:gap-10">
+    <motion.div className="custom-container relative z-20 ml-auto mr-auto flex flex-col items-center gap-0 space-x-4 space-y-8 lg:flex-row xl:gap-10">
       <motion.div
         initial={isMobile ? initialMobileFramerConfig : initialRightSlideAndFadeConfig}
         whileInView={whileInViewSlideConfig}
@@ -64,7 +64,7 @@ const AboutSection = () => {
           excellence.
         </p>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 

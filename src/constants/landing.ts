@@ -139,9 +139,9 @@ export const projects = [
   },
 ];
 
-export const initialMobileFramerConfig = { opacity: 0, scale: 0 };
+export const initialMobileFramerConfig = { opacity: 0, scale: 0, x: 80 };
 
-export const initialRightSlideAndFadeConfig = { opacity: 0, scale: 0, x: -300 };
-export const initialLeftSlideAndFadeConfig = { opacity: 0, scale: 0, x: 300 };
+export const initialRightSlideAndFadeConfig = { opacity: 0, scale: 0, x: -200 };
+export const initialLeftSlideAndFadeConfig = { opacity: 0, scale: 0, x: 200 };
 
 export const whileInViewSlideConfig = { opacity: 1, scale: 1, x: 0 };

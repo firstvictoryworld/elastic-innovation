@@ -63,13 +63,7 @@ const ProjectsSection = () => {
         </span>
         <div className="h-[3px] w-24 bg-green-special-1" />
       </motion.div>
-      <motion.div
-        initial={isMobile ? initialMobileFramerConfig : initialLeftSlideAndFadeConfig}
-        whileInView={whileInViewSlideConfig}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="project-cards mb-16 md:mb-20"
-      >
+      <motion.div className="project-cards mb-16 md:mb-20">
         {/* <Carousel
           showArrows={true}
           showThumbs={false}
@@ -93,7 +87,7 @@ const ProjectsSection = () => {
                 isMobile ? initialMobileFramerConfig : initialRightSlideAndFadeConfig
               }
               whileInView={whileInViewSlideConfig}
-              transition={{ duration: 0.3, delay: 0.3 * (index + 1) }}
+              transition={{ duration: 0.3, delay: 0.3 * index }}
               viewport={{ once: true }}
               key={`${item.id}`}
               className="group relative h-[400px] w-full overflow-hidden rounded-2xl"

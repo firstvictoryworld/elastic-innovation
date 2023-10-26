@@ -17,7 +17,7 @@ const TechnologyTypeSection = () => {
   const isDarkMode = useSelector((state: RootState) => state.commonReducer.isDarkMode);
 
   return (
-    <div
+    <motion.div
       className={classNames('relative z-20 bg-cover bg-no-repeat', {
         'bg-tech': isDarkMode,
       })}
@@ -86,9 +86,7 @@ const TechnologyTypeSection = () => {
           </motion.div>
           <div className="flex flex-col justify-between space-y-4 pt-11">
             <motion.div
-              initial={
-                isMobile ? initialMobileFramerConfig : { opacity: 0, scale: 0, y: 100 }
-              }
+              initial={{ opacity: 0, scale: 0, y: 80 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
@@ -114,9 +112,7 @@ const TechnologyTypeSection = () => {
               </div>
             </motion.div>
             <motion.div
-              initial={
-                isMobile ? initialMobileFramerConfig : { opacity: 0, scale: 0, y: -100 }
-              }
+              initial={{ opacity: 0, scale: 0, y: -80 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
@@ -171,7 +167,7 @@ const TechnologyTypeSection = () => {
           </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
