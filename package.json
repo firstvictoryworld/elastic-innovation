@@ -8,7 +8,10 @@
     "lint:fix": "eslint ./src --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
     "lint:format": "prettier  --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" ",
     "lint": "npm run lint:format && npm run lint:fix ",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "homepage": "https://jahedul29.github.io/elastic-innovation"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -42,6 +45,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-simple-import-sort": "^10.0.0",
+    "gh-pages": "^6.0.0",
     "postcss": "^8.4.25",
     "pre-commit": "^1.2.2",
     "prettier": "^2.8.8",

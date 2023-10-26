@@ -24,12 +24,12 @@ const AppRoute = ({
 export const AppRoutes = () => {
   const mainRoutes = useRoutes([
     {
-      path: '/home',
+      path: '/',
       element: <AppRoute component={Landing} />,
     },
     {
       path: '*',
-      element: <Navigate to="/home" replace />,
+      element: <Navigate to="/" replace />,
     },
   ]);
 

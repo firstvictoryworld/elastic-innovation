@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <div className="custom-container relative top-0 z-10 mx-auto">
       <div className="flex items-center justify-between py-2 ">
-        <Link to="/home">
+        <Link to="/">
           <img
             src="/assets/images/Elastic-Innovation-Solutions-logo-1.png"
             alt="logo"
